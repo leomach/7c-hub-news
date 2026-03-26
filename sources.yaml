@@ -1,0 +1,159 @@
+# sources.yaml
+metadata:
+  version: "1.0"
+  last_updated: "2026-03-25"
+
+settings:
+  max_age_hours: 48
+  fetch_timeout_seconds: 10
+  max_concurrent_fetches: 10
+
+quotas:
+  global: 3
+  national: 2
+  regional: 1
+  minimum_total: 3
+
+sources:
+  # --- Fontes Internacionais (Inglês) ---
+  - id: hackernews
+    name: "Hacker News"
+    type: rest_hackernews
+    enabled: true
+    category: global
+    language: en
+    weight: 1.0
+    config:
+      top_stories_limit: 30
+
+  - id: techcrunch
+    name: "TechCrunch"
+    type: rss
+    enabled: true
+    category: global
+    language: en
+    weight: 1.0
+    url: "https://techcrunch.com/feed/"
+    config:
+      max_items: 10
+
+  - id: the_verge
+    name: "The Verge"
+    type: rss
+    enabled: true
+    category: global
+    language: en
+    weight: 1.0
+    url: "https://www.theverge.com/rss/index.xml"
+
+  - id: devto_ai
+    name: "Dev.to (AI)"
+    type: rss
+    enabled: true
+    category: global
+    language: en
+    weight: 0.8
+    url: "https://dev.to/feed/tag/ai"
+
+  - id: devto_webdev
+    name: "Dev.to (WebDev)"
+    type: rss
+    enabled: true
+    category: global
+    language: en
+    weight: 0.8
+    url: "https://dev.to/feed/tag/webdev"
+
+  - id: github_blog
+    name: "GitHub Blog"
+    type: rss
+    enabled: true
+    category: global
+    language: en
+    weight: 0.9
+    url: "https://github.blog/feed/"
+
+  - id: infoq
+    name: "InfoQ"
+    type: rss
+    enabled: true
+    category: global
+    language: en
+    weight: 0.9
+    url: "https://www.infoq.com/feed/?variant=rss"
+
+  # --- Fontes Nacionais (Português) ---
+  - id: tabnews
+    name: "TabNews"
+    type: rest_tabnews
+    enabled: true
+    category: national
+    language: pt
+    weight: 1.0
+    config:
+      strategy: relevant
+      per_page: 15
+
+  - id: g1_tecnologia
+    name: "G1 Tecnologia"
+    type: rss
+    enabled: true
+    category: national
+    language: pt
+    weight: 1.0
+    url: "https://g1.globo.com/rss/g1/tecnologia/"
+
+  - id: tecnoblog
+    name: "Tecnoblog"
+    type: rss
+    enabled: true
+    category: national
+    language: pt
+    weight: 0.9
+    url: "https://tecnoblog.net/feed/"
+
+  - id: filipe_deschamps
+    name: "Filipe Deschamps (YouTube)"
+    type: rss
+    enabled: true
+    category: national
+    language: pt
+    weight: 0.9
+    url: "https://www.youtube.com/feeds/videos.xml?channel_id=UCU5JicSrEM5A63jkJ2QvGYw"
+
+  # --- Fontes Regionais (Pernambuco / Garanhuns) ---
+  - id: google_alerts_pernambuco
+    name: "Google Alerts — Pernambuco Tech"
+    type: rss
+    enabled: false
+    category: regional
+    language: pt
+    weight: 1.2
+    url: "https://www.google.com/alerts/feeds/XXXXXX/YYYYYY" # ID deve ser configurado pelo admin
+
+  - id: google_alerts_garanhuns
+    name: "Google Alerts — Garanhuns Tech"
+    type: rss
+    enabled: false
+    category: regional
+    language: pt
+    weight: 1.2
+    url: "https://www.google.com/alerts/feeds/XXXXXX/ZZZZZZ" # ID deve ser configurado pelo admin
+
+  - id: porto_digital
+    name: "Porto Digital (Blog)"
+    type: rss
+    enabled: true
+    category: regional
+    language: pt
+    weight: 1.1
+    url: "https://www.portodigital.org/feed"
+
+llm:
+  provider: "gemini"
+  base_url: "https://generativelanguage.googleapis.com/v1beta/openai"
+  model: "gemini-1.5-flash"
+  max_tokens: 1000
+  temperature: 0.3
+
+prompts_dir: "processor/prompts/"

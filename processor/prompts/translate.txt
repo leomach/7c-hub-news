@@ -1,0 +1,6 @@
+Traduza o seguinte título e resumo de notícia de tecnologia para português brasileiro.
+Preserve nomes próprios, termos técnicos e nomes de produtos em inglês.
+Retorne SOMENTE um JSON com os campos "title" e "summary", sem explicações adicionais nem blocos de código markdown.
+
+Título original: {title}
+Resumo original: {summary}

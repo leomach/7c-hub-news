@@ -1,0 +1,17 @@
+# Go binaries
+collector/collector
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+
+# Project specific
+output/
+news.json
+bulletin.txt
+
+# OS
+.DS_Store

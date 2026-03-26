@@ -1,0 +1,8 @@
+google-generativeai
+pydantic
+pydantic-settings
+pyyaml
+python-dotenv
+python-dateutil
+httpx
+pytest
