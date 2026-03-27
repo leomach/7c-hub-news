@@ -26,6 +26,7 @@ jobs:
       - name: Build e Executar Coletor
         run: |
           cd collector
+          mkdir -p ../bin
           go build -o ../bin/collector .
           cd ..
           ./bin/collector --config sources.yaml --output output/news.json
