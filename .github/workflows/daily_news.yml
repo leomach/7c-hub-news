@@ -6,7 +6,7 @@ on:
   workflow_dispatch:          # Permite execução manual
 
 env:
-  GO_VERSION: '1.22'
+  GO_VERSION: '1.25'
   PYTHON_VERSION: '3.11'
 
 jobs:
