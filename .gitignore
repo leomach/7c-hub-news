@@ -9,7 +9,7 @@ venv/
 .env
 
 # Project specific
-output/
+/output/
 news.json
 bulletin.txt
 

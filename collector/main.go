@@ -7,11 +7,11 @@ import (
 	"sync"
 	"time"
 
-	"7c-hub-news/collector/config"
-	"7c-hub-news/collector/dedup"
-	"7c-hub-news/collector/fetcher"
-	"7c-hub-news/collector/model"
-	"7c-hub-news/collector/output"
+	"collector/config"
+	"collector/dedup"
+	"collector/fetcher"
+	"collector/model"
+	"collector/output"
 )
 
 func main() {

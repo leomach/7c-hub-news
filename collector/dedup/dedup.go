@@ -2,7 +2,7 @@ package dedup
 
 import (
 	"strings"
-	"7c-hub-news/collector/model"
+	"collector/model"
 )
 
 func Deduplicate(items []model.NewsItem) []model.NewsItem {

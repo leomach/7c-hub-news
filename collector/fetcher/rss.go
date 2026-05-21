@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"time"
 
-	"7c-hub-news/collector/config"
-	"7c-hub-news/collector/model"
+	"collector/config"
+	"collector/model"
 
 	"github.com/mmcdole/gofeed"
 )

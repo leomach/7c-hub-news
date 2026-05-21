@@ -1,4 +1,4 @@
-module 7c-hub-news/collector
+module collector
 
 go 1.25.5
 

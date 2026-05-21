@@ -2,8 +2,8 @@ package fetcher
 
 import (
 	"context"
-	"7c-hub-news/collector/config"
-	"7c-hub-news/collector/model"
+	"collector/config"
+	"collector/model"
 )
 
 type Fetcher interface {
