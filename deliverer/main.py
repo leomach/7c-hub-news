@@ -1,4 +1,5 @@
 import os
+import sys
 import logging
 import argparse
 from dotenv import load_dotenv
@@ -19,11 +20,11 @@ def main():
 
     if not token or not chat_id:
         logger.error("TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID not found in environment")
-        return
+        sys.exit(1)
 
     if not os.path.exists(args.input):
         logger.error(f"Bulletin file not found: {args.input}")
-        return
+        sys.exit(1)
 
     with open(args.input, "r") as f:
         # Skip metadata header (split by ---)

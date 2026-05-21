@@ -1,4 +1,5 @@
 import os
+import sys
 import json
 import logging
 from datetime import datetime
@@ -18,9 +19,13 @@ def main():
     logging.basicConfig(level=settings.log_level)
     logger = logging.getLogger(__name__)
 
+    if not settings.llm_api_key:
+        logger.error("LLM_API_KEY is not set")
+        sys.exit(1)
+
     if not os.path.exists(settings.input_file):
         logger.error(f"Input file not found: {settings.input_file}")
-        return
+        sys.exit(1)
 
     with open(settings.input_file, "r") as f:
         data = json.load(f)
